@@ -1,0 +1,18 @@
+# Important Datas (include sensitive data(e.g password, db, ect.))
+.env
+
+# Dependensi
+/vendor/
+/node_modules/
+
+# Hasil build & runtime
+/public/assets/css/output.css
+/storage/logs/
+/storage/exports/
+/public/uploads/
+
+# File sistem & editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
