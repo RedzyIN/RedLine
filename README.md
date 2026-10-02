@@ -1,4 +1,10 @@
-donorasi/
+# App Name & Description
+RedLine is a website application used for blood donation coordination platform that provides transparent blood stock information, verified emergency requests, scheduled donation events, and accessible donor contacts. Medical decisions remain under the authority of hospitals and blood transfusion units.
+
+# Directory Structure
+
+```text
+redline/
 ├── public/                         # Document root
 │   ├── index.php                   # Landing page
 │   ├── .htaccess                   # Rewrite URL & blokir akses file sensitif
@@ -67,3 +73,4 @@ donorasi/
 ├── composer.json
 ├── .env                            # Kredensial DB, SMTP (jangan di-commit)
 └── README.md
+```
