@@ -20,5 +20,9 @@
   "homepage": "https://github.com/RedzyIN/donorasi#readme",
   "devDependencies": {
     "tailwindcss": "^3.4.19"
+  },
+  "scripts": {
+  "dev": "tailwindcss -i ./public/assets/css/input.css -o ./public/assets/css/output.css --watch",
+  "build": "tailwindcss -i ./public/assets/css/input.css -o ./public/assets/css/output.css --minify"
   }
 }
