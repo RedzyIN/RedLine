@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/assets/css/output.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
+  <?php require __DIR__ . '/../partials/flash.php'; ?>
   <?= $content ?? '' ?>
 </body>
 </html>
