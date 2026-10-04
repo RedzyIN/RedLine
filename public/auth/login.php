@@ -7,23 +7,20 @@ ob_start(); ?>
 <div class="min-h-screen bg-slate-100 flex items-center justify-center p-4">
   
   <div class="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
-    <h2 class="text-2xl font-bold text-center text-slate-800 mb-6">Login</h2>
+    <h2 class="text-2xl font-bold text-center text-slate-800 mb-6">Log in</h2>
     
     <form>
       <div class="mb-8">
         <?php partial('input', ['name' => 'email', 'label' => 'Email', 'type' => 'email', 'placeholder' => 'youremail@gmail.com']) ?>
-        <div id="emailError"></div>
       </div>
       <div class="mb-12">
         <?php partial('input', ['name' => 'password', 'label' => 'Password', 'type' => 'password', 'placeholder' => '********']) ?>
         <div class="flex justify-between font-small">
           <a href="">Lupa Password?</a>
-          <div id="passwordError"></div>
         </div>
       </div>
 
-      <?php partial('button', ['label' => 'Login', 'type' => 'submit', 'variant' => 'form'])?>
-      <p class="font-small">Belum punya akun? <a href="forgot_password.php" class="text-blue-700">Daftar</a></p>
+      <?php partial('button', ['label' => 'Log in', 'type' => 'submit', 'variant' => 'login'])?>
     </form>
 
     <div class="flex items-center my-5">

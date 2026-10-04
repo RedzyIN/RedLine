@@ -9,7 +9,7 @@ if ($variant === 'secondary') {
     $color = 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50';
 } elseif ($variant === 'danger') {
     $color = 'bg-red-100 text-red-700 hover:bg-red-200';
-} elseif ($variant === 'form') {
+} elseif ($variant === 'login') {
     $color = 'w-full bg-red-600 text-white rounded-lg hover:bg-red-700';
 } elseif ($variant === 'donorUser') {
     $color = 'w-full bg-white text-red-600 border border-red-600 rounded-lg hover:bg-red-600 hover:text-white';

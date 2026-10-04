@@ -9,5 +9,11 @@
 <body class="bg-gray-50 text-gray-800">
   <?php require __DIR__ . '/../partials/flash.php'; ?>
   <?= $content ?? '' ?>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="/assets/js/app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
