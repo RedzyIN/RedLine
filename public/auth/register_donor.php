@@ -16,16 +16,18 @@ ob_start(); ?>
         <?php partial('input', ['name' => 'email', 'label' => 'Email', 'type' => 'email', 'placeholder' => 'youremail@gmail.com']) ?>
       </div>
       <div class="mb-8">
+        <?php partial('input', ['name' => 'telpon', 'label' => 'No. Telpon', 'type' => 'tel', 'placeholder' => '+622134567890']) ?>
+      </div>
+      <div class="mb-8">
         <?php partial('input', ['name' => 'password', 'label' => 'Password', 'type' => 'password', 'placeholder' => 'Masukkan Password']) ?>
       </div>
       <div class="mb-8">
-        <?php partial('input', ['name' => 'password', 'label' => 'Konfirmasi Password', 'type' => 'password', 'placeholder' => 'Masukkan Ulang Password']) ?>
+        <?php partial('input', ['name' => 'cPassword', 'label' => 'Konfirmasi Password', 'type' => 'password', 'placeholder' => 'Masukkan Ulang Password']) ?>
       </div>
       <div class="mb-8">
-        <?php partial('input', ['name' => 'agreement', 'label' => 'Saya memberikan persetujuan atas pemrosesan data pribadi saya sesuai dengan <a href="https://jdih.komdigi.go.id/produk_hukum/view/id/832/t/undangundang+nomor+27+tahun+2022">Kebijakan Privasi yang berlaku.</a>', 'type' => 'checkbox']) ?>
+        <?php partial('input', ['name' => 'agreement', 'label' => 'Saya memberikan persetujuan atas pemrosesan data pribadi saya sesuai dengan <a href="https://jdih.komdigi.go.id/produk_hukum/view/id/832/t/undangundang+nomor+27+tahun+2022">Kebijakan Privasi</a> yang berlaku.', 'type' => 'checkbox']) ?>
       </div>
-        <?php partial('button', ['label' => 'Daftar', 'type' => 'submit', 'variant' => 'donorUser', 'href' => 'register_donor.php'])?>
-      
+        <?php partial('button', ['label' => 'Daftar', 'type' => 'submit', 'variant' => 'red', 'href' => '../donor/complete_profile.php'])?>
     </form>
     
     <div class="flex items-center my-5">

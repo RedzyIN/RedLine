@@ -11,10 +11,10 @@ ob_start(); ?>
     
     <form>
       <div class="mb-8">
-        <?php partial('input', ['name' => 'email', 'label' => 'Email', 'type' => 'email', 'placeholder' => 'youremail@gmail.com']) ?>
+        <?php partial('input', ['name' => 'email', 'label' => 'Email', 'type' => 'email', 'placeholder' => 'youremail@gmail.com', 'require' => true]) ?>
       </div>
       <div class="mb-12">
-        <?php partial('input', ['name' => 'password', 'label' => 'Password', 'type' => 'password', 'placeholder' => '********']) ?>
+        <?php partial('input', ['name' => 'password', 'label' => 'Password', 'type' => 'password', 'placeholder' => '********', 'require' => true]) ?>
         <div class="flex justify-between font-small">
           <a href="">Lupa Password?</a>
         </div>
@@ -28,7 +28,7 @@ ob_start(); ?>
         <span class="mx-3 text-sm text-gray-500">Atau</span>
         <div class="flex-grow border-t border-gray-300"></div>
     </div>
-    <?php partial('button', ['label' => 'Daftar Sebagai Pendonor', 'variant' => 'donorUser', 'href' => 'register_donor.php'])?>
+    <?php partial('button', ['label' => 'Daftar Sebagai Pendonor', 'variant' => 'red', 'href' => 'register_donor.php'])?>
     <?php partial('button', ['label' => 'Daftar Sebagai Institusi', 'variant' => 'medical', 'href' => 'register_institution.php'])?>
   </div>
 
