@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= htmlspecialchars($title ?? 'RedBlood') ?></title>
   <link rel="stylesheet" href="/assets/css/output.css">
+  <link rel="icon" type="image/png" href="/assets/img/brand/logo_favicon.png">
 </head>
 <body class="bg-gray-50 text-gray-800">
   <?php require __DIR__ . '/../partials/flash.php'; ?>
