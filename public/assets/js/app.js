@@ -1,8 +1,8 @@
 // Register Institusi
-const form = document.getElementById('regForm');
+const insForm = document.getElementById('institutionForm');
 
-if (form) {
-  const steps = [...form.querySelectorAll('[data-step]')];
+if (insForm) {
+  const steps = [...insForm.querySelectorAll('[data-step]')];
   const bars = document.querySelectorAll('#stepIndicator > div');
   const label = document.getElementById('stepLabel');
   const labels = [
@@ -30,8 +30,8 @@ if (form) {
 
   function stepValid(i) {
     if (i === 1) {
-      const pw = form.querySelector('[name="password"]');
-      const cpw = form.querySelector('[name="cPassword"]');
+      const pw = insForm.querySelector('[name="password"]');
+      const cpw = insForm.querySelector('[name="cPassword"]');
       if (pw.value !== cpw.value) {
         cpw.setCustomValidity('Konfirmasi password tidak cocok');
         cpw.reportValidity();
@@ -46,7 +46,7 @@ if (form) {
     return true;
   }
 
-  form.addEventListener('click', (e) => {
+  insForm.addEventListener('click', (e) => {
     const next = e.target.closest('[data-next]');
     const prev = e.target.closest('[data-prev]');
     if (next && stepValid(current)) show(current + 1);
@@ -145,3 +145,65 @@ document.querySelectorAll('[data-file-field]').forEach((wrap) => {
     })
   );
 });
+
+//Konfirmasi Password Baru
+function showError(input, box, message) {
+  box.textContent = message;
+  box.classList.remove('hidden');
+  input.classList.add('border-red-500');
+}
+
+function clearError(input, box) {
+  box.textContent = '';
+  box.classList.add('hidden');
+  input.classList.remove('border-red-500');
+}
+
+function validatePassword(input, box) {
+  if (input.value.length < 8) {
+    showError(input, box, 'Kata sandi minimal 8 karakter.');
+    return false;
+  }
+  clearError(input, box);
+  return true;
+}
+
+function validateConfirm(input, confirmInput, box) {
+  if (confirmInput.value !== input.value) {
+    showError(confirmInput, box, 'Konfirmasi kata sandi tidak cocok.');
+    return false;
+  }
+  clearError(confirmInput, box);
+  return true;
+}
+
+function setupPasswordValidation({ formId, pwId, confirmId }) {
+  const form = document.getElementById(formId);
+  const pw = document.getElementById(pwId);
+  const confirm = document.getElementById(confirmId);
+  const pwError = document.getElementById(pwId + '-error');
+  const confirmError = document.getElementById(confirmId + '-error');
+
+  // Jika form ini tidak ada di halaman, lewati
+  if (!form || !pw || !confirm || !pwError || !confirmError) return;
+
+  pw.addEventListener('input', () => {
+    validatePassword(pw, pwError);
+    if (confirm.value !== '') validateConfirm(pw, confirm, confirmError);
+  });
+
+  confirm.addEventListener('input', () => {
+    validateConfirm(pw, confirm, confirmError);
+  });
+
+  form.addEventListener('submit', (e) => {
+    const okPw = validatePassword(pw, pwError);
+    const okConfirm = validateConfirm(pw, confirm, confirmError);
+    if (!okPw || !okConfirm) e.preventDefault();
+  });
+}
+
+// Daftarkan semua form. Yang tidak ada di halaman otomatis dilewati.
+setupPasswordValidation({ formId: 'resetForm',    pwId: 'newPassword', confirmId: 'cNewPassword' });
+setupPasswordValidation({ formId: 'donorForm',    pwId: 'password',    confirmId: 'cPassword' });
+setupPasswordValidation({ formId: 'institutionForm', pwId: 'password', confirmId: 'cPassword' });

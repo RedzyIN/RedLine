@@ -21,7 +21,7 @@ ob_start(); ?>
         <p id="stepLabel" class="text-xs text-gray-500 mt-2 text-center">Registrasi Data Institusi</p>
     </div>
     
-    <form method="post" enctype="multipart/form-data" id="regForm" novalidate>
+    <form method="post" enctype="multipart/form-data" id="institutionForm" novalidate>
         
         <section data-step="1">
             <div class="mb-8">
@@ -79,7 +79,7 @@ ob_start(); ?>
                 <?php partial('input', ['name' => 'telpon', 'label' => 'No. Telpon', 'type' => 'tel', 'placeholder' => '+622134567890', 'required' => true]) ?>
             </div>
             <div class="mb-8">
-                <?php partial('input', ['name' => 'password', 'label' => 'Password', 'type' => 'password', 'placeholder' => 'Masukkan Password', 'required' => true]) ?>
+                <?php partial('input', ['name' => 'password', 'label' => 'Password', 'type' => 'password', 'placeholder' => 'Masukkan Password', 'required' => true, 'error' => $_SESSION['errors']['password'] ?? '']) ?>
             </div>
             <div class="mb-8">
                 <?php partial('input', ['name' => 'cPassword', 'label' => 'Konfirmasi Password', 'type' => 'password', 'placeholder' => 'Masukkan Ulang Password', 'required' => true]) ?>

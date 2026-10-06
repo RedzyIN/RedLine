@@ -9,14 +9,18 @@ ob_start(); ?>
   <div class="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
     <h2 class="text-2xl font-bold text-center text-slate-800 mb-6">Log in</h2>
     
-    <form>
+    <div class="flex justify-center mb-4">
+        <img src="/assets/img/brand/redline_auth.png" alt="Logo RedLine" class="h-12 w-auto">
+     </div>
+
+    <form action='post' novalidate>
       <div class="mb-8">
         <?php partial('input', ['name' => 'email', 'label' => 'Email', 'type' => 'email', 'placeholder' => 'youremail@gmail.com', 'require' => true]) ?>
       </div>
       <div class="mb-12">
         <?php partial('input', ['name' => 'password', 'label' => 'Password', 'type' => 'password', 'placeholder' => '********', 'require' => true]) ?>
         <div class="flex justify-between font-small">
-          <a href="">Lupa Password?</a>
+          <a href="forgot_password.php">Lupa Password?</a>
         </div>
       </div>
 

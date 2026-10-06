@@ -8,24 +8,28 @@ ob_start(); ?>
   <div class="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
     <h2 class="text-2xl font-bold text-center text-slate-800 mb-6">Registrasi Pendonor</h2>
     
-    <form>
+    <div class="flex justify-center mb-4">
+        <img src="/assets/img/brand/redline_auth.png" alt="Logo RedLine" class="h-12 w-auto">
+     </div>
+     
+    <form id='donorForm' action='post' novalidate>
       <div class="mb-8">
-        <?php partial('input', ['name' => 'name', 'label' => 'Nama Lengkap', 'type' => 'email', 'placeholder' => 'Fullname']) ?>
+        <?php partial('input', ['name' => 'name', 'label' => 'Nama Lengkap', 'type' => 'email', 'placeholder' => 'Fullname', 'required' => true]) ?>
       </div>
       <div class="mb-8">
-        <?php partial('input', ['name' => 'email', 'label' => 'Email', 'type' => 'email', 'placeholder' => 'youremail@gmail.com']) ?>
+        <?php partial('input', ['name' => 'email', 'label' => 'Email', 'type' => 'email', 'placeholder' => 'youremail@gmail.com', 'required' => true]) ?>
       </div>
       <div class="mb-8">
-        <?php partial('input', ['name' => 'telpon', 'label' => 'No. Telpon', 'type' => 'tel', 'placeholder' => '+622134567890']) ?>
+        <?php partial('input', ['name' => 'telpon', 'label' => 'No. Telpon', 'type' => 'tel', 'placeholder' => '+622134567890', 'required' => true]) ?>
       </div>
       <div class="mb-8">
-        <?php partial('input', ['name' => 'password', 'label' => 'Password', 'type' => 'password', 'placeholder' => 'Masukkan Password']) ?>
+        <?php partial('input', ['name' => 'password', 'label' => 'Password', 'type' => 'password', 'placeholder' => 'Masukkan Password', 'required' => true, 'error' => $_SESSION['errors']['password'] ?? '']) ?>
       </div>
       <div class="mb-8">
-        <?php partial('input', ['name' => 'cPassword', 'label' => 'Konfirmasi Password', 'type' => 'password', 'placeholder' => 'Masukkan Ulang Password']) ?>
+        <?php partial('input', ['name' => 'cPassword', 'label' => 'Konfirmasi Password', 'type' => 'password', 'placeholder' => 'Masukkan Ulang Password', 'required' => true]) ?>
       </div>
       <div class="mb-8">
-        <?php partial('input', ['name' => 'agreement', 'label' => 'Saya memberikan persetujuan atas pemrosesan data pribadi saya sesuai dengan <a href="https://jdih.komdigi.go.id/produk_hukum/view/id/832/t/undangundang+nomor+27+tahun+2022">Kebijakan Privasi</a> yang berlaku.', 'type' => 'checkbox']) ?>
+        <?php partial('input', ['name' => 'agreement', 'label' => 'Saya memberikan persetujuan atas pemrosesan data pribadi saya sesuai dengan <a href="https://jdih.komdigi.go.id/produk_hukum/view/id/832/t/undangundang+nomor+27+tahun+2022">Kebijakan Privasi</a> yang berlaku.', 'type' => 'checkbox', 'required' => true]) ?>
       </div>
         <?php partial('button', ['label' => 'Daftar', 'type' => 'submit', 'variant' => 'red', 'href' => '../donor/complete_profile.php'])?>
     </form>
